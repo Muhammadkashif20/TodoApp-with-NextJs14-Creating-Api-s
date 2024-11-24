@@ -25,8 +25,15 @@ const todoData = [
       completed: false,
     },
   ];
-
   export async function GET() {
+    return Response.json({
+            data:todoData,
+            msg:'Fetch Api Successfully'
+        })
+  }
+  export async function POST(request) {
+    let data=await request.json()
+    console.log('data from frontend to backend=>',data);
     return Response.json({
             data:todoData,
             msg:'Fetch Api Successfully'
