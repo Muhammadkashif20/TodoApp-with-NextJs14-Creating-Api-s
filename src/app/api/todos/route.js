@@ -33,9 +33,15 @@ const todoData = [
   }
   export async function POST(request) {
     let data=await request.json()
+    const obj={
+        ...data,
+      isCompleted:false,
+      id:todoData.length+1
+    }
+    todoData.push(obj)
     console.log('data from frontend to backend=>',data);
     return Response.json({
             data:todoData,
-            msg:'Fetch Api Successfully'
+            msg:'add Todo Successfully'
         })
   }
