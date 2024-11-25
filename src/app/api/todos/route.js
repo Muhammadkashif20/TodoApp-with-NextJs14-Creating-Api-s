@@ -17,7 +17,7 @@ const todoData = [
     {
       id: 4,
       title: "Watch JavaScript Tutorials",
-      completed: true,
+      completed: false,
     },
     {
       id: 5,
@@ -25,12 +25,14 @@ const todoData = [
       completed: false,
     },
   ];
+  // GET Request For Todo
   export async function GET() {
     return Response.json({
             data:todoData,
             msg:'Fetch Api Successfully'
         })
   }
+  // POST Request For Todo
   export async function POST(request) {
     let data=await request.json()
     const obj={
@@ -45,3 +47,16 @@ const todoData = [
             msg:'add Todo Successfully'
         })
   }
+  // PUT Request For Todo
+
+ export async function PUT(request) {
+    let data=await request.json()
+    console.log('dataPUT=>',data);
+    let todoIndex=todoData.findIndex((todo)=>todo.id==data.id)
+    todoData[todoIndex]=data
+    return Response.json({
+            data:todoData,
+            msg:'add Todo Successfully'
+        })
+  }
+  

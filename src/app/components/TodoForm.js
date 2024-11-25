@@ -1,9 +1,14 @@
-
+'use client'
+import { useRef } from "react";
 import { addTodo } from "../actions/todo";
     const TodoForm = () => {
+       const formRef=useRef(null)
     return (
         <div>
-            <form action={addTodo} className="flex justify-center m-5">
+            <form ref={formRef} 
+                action={async(formData)=>{
+                await addTodo(formData);
+                formRef.current?.reset();}} className="flex justify-center m-5">
             <input
             type="text"
             placeholder="Enter Your Todos"

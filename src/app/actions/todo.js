@@ -13,3 +13,15 @@ try {
     console.log('error=>',error);
 }
 }
+  // UbdateTodo Request For Todo
+  export async function ubdateTodo(obj) {
+try {
+    await fetch('http://localhost:3000/api/todos',{
+        method:'POST',
+        body:JSON.stringify(obj)
+    })
+    revalidatePath('/todo')
+} catch (error) {
+    console.log('error=>',error);
+}
+}
