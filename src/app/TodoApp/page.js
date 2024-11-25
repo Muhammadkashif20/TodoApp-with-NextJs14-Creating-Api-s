@@ -11,7 +11,7 @@ const page = async () => {
     <TodoForm/>
       {getData.data?.map((todo) => {
         return (
-          <TodoList todo={todo} key={todo.id}/>
+          <TodoList  todo={todo} key={todo.id}/>
         );
       })}
     </div>
