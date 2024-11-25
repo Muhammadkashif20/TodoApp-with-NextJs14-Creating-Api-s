@@ -15,6 +15,7 @@ try {
 }
   // UbdateTodo Request For Todo
   export async function ubdateTodo(obj) {
+    console.log('obj=>',obj);
 try {
     await fetch('http://localhost:3000/api/todos',{
         method:'POST',
