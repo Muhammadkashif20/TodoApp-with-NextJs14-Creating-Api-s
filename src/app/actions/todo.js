@@ -26,3 +26,16 @@ try {
     console.log('error=>',error);
 }
 }
+  // DeleteTodo Request For Todo
+export async function deleteTodo(obj) {
+    console.log('obj=>',obj);
+try {
+    await fetch('http://localhost:3000/api/todos',{
+        method:'DELETE',
+        body:JSON.stringify(obj)
+    })
+    revalidatePath('/todo')
+} catch (error) {
+    console.log('error=>',error);
+}
+}

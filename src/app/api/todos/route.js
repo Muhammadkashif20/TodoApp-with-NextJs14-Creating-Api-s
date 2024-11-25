@@ -59,6 +59,7 @@
               msg:'add Todo Successfully'
           })
     }
+    // DELETE Request For Todo
     export async function DELETE(request) {
       let data=await request.json()
       let todoIndex=todoData.findIndex((todo)=>todo.id==data.id)
