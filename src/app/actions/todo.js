@@ -18,7 +18,7 @@ try {
     console.log('obj=>',obj);
 try {
     await fetch('http://localhost:3000/api/todos',{
-        method:'POST',
+        method:'PUT',
         body:JSON.stringify(obj)
     })
     revalidatePath('/todo')

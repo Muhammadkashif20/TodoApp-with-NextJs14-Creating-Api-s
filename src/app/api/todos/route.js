@@ -16,7 +16,7 @@
       },
       {
         id: 4,
-        title: "Watch JavaScript Tutorials",
+        title: "Watch A JavaScript Tutorials",
         completed: false,
       },
       {
